@@ -301,7 +301,7 @@ p {
 .hero-shell {
   position: relative;
   overflow: hidden;
-  border-radius: 1.4rem;
+  border-radius: var(--radius);
   background: #12302a;
   min-height: 41rem;
   box-shadow: 0 22px 60px rgba(18, 51, 43, 0.16);
