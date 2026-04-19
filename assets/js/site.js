@@ -7,8 +7,6 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.getElementById("site-navigation");
 const banner = document.querySelector("[data-cookie-banner]");
 const cookieButtons = document.querySelectorAll("[data-cookie-action]");
-const contactForm = document.querySelector("[data-contact-form]");
-const formStatus = document.querySelector("[data-form-status]");
 
 function readStorage(key) {
   try {
@@ -93,25 +91,6 @@ function initCookieActions() {
   });
 }
 
-function initForm() {
-  if (!contactForm || !formStatus) return;
-
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!contactForm.checkValidity()) {
-      formStatus.textContent = "Please complete the required fields before sending your enquiry.";
-      contactForm.reportValidity();
-      return;
-    }
-
-    formStatus.textContent =
-      "Thank you. Your enquiry has been captured in this prototype and is ready to connect to a live service.";
-    contactForm.reset();
-  });
-}
-
 initNavigation();
 initCookieBanner();
 initCookieActions();
-initForm();

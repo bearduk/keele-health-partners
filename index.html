@@ -371,12 +371,36 @@
           </div>
 
           <div class="logo-grid" aria-label="Partner placeholders">
-            <div class="logo-card">Health partner logo</div>
-            <div class="logo-card">Academic partner logo</div>
-            <div class="logo-card">Community partner logo</div>
-            <div class="logo-card">Business partner logo</div>
-            <div class="logo-card">Regional partner logo</div>
-            <div class="logo-card">Innovation partner logo</div>
+            <div class="logo-card logo-card-health">
+              <span class="logo-chip">Health partner</span>
+              <span class="logo-mark" aria-hidden="true"></span>
+              <span class="logo-wordmark">Future partner logo</span>
+            </div>
+            <div class="logo-card logo-card-academic">
+              <span class="logo-chip">Academic partner</span>
+              <span class="logo-mark" aria-hidden="true"></span>
+              <span class="logo-wordmark">Future partner logo</span>
+            </div>
+            <div class="logo-card logo-card-community">
+              <span class="logo-chip">Community partner</span>
+              <span class="logo-mark" aria-hidden="true"></span>
+              <span class="logo-wordmark">Future partner logo</span>
+            </div>
+            <div class="logo-card logo-card-business">
+              <span class="logo-chip">Business partner</span>
+              <span class="logo-mark" aria-hidden="true"></span>
+              <span class="logo-wordmark">Future partner logo</span>
+            </div>
+            <div class="logo-card logo-card-regional">
+              <span class="logo-chip">Regional partner</span>
+              <span class="logo-mark" aria-hidden="true"></span>
+              <span class="logo-wordmark">Future partner logo</span>
+            </div>
+            <div class="logo-card logo-card-innovation">
+              <span class="logo-chip">Innovation partner</span>
+              <span class="logo-mark" aria-hidden="true"></span>
+              <span class="logo-wordmark">Future partner logo</span>
+            </div>
           </div>
         </div>
       </section>
@@ -452,47 +476,62 @@
             </div>
           </div>
 
-          <form class="contact-form" data-contact-form aria-describedby="form-note" novalidate>
-            <div class="form-row">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required>
+          <section class="ms-form-embed" aria-labelledby="ms-form-heading" aria-describedby="form-note">
+            <div class="ms-form-bar" aria-hidden="true">
+              <span class="ms-form-dot"></span>
+              <span class="ms-form-dot"></span>
+              <span class="ms-form-dot"></span>
+              <span class="ms-form-app">Microsoft Forms embed placeholder</span>
             </div>
-            <div class="form-row">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <div class="ms-form-frame">
+              <div class="ms-form-header">
+                <p class="ms-form-kicker">Keele Health Partners</p>
+                <h3 id="ms-form-heading">Partnership enquiry</h3>
+                <p>
+                  This area can be replaced with a live embedded Microsoft Form once the final form
+                  URL and fields are confirmed.
+                </p>
+              </div>
+
+              <form class="contact-form contact-form-mock" novalidate>
+                <div class="form-row">
+                  <label for="name">Full name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name">
+                </div>
+                <div class="form-row">
+                  <label for="email">Email address</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="name@organisation.com">
+                </div>
+                <div class="form-row">
+                  <label for="organisation">Organisation</label>
+                  <input id="organisation" name="organisation" type="text" autocomplete="organization" placeholder="Organisation name">
+                </div>
+                <div class="form-row">
+                  <label for="interest">Area of interest</label>
+                  <select id="interest" name="interest">
+                    <option value="">Select one</option>
+                    <option>Research and innovation collaboration</option>
+                    <option>Commercial partnership</option>
+                    <option>Public partnership</option>
+                    <option>Training and workforce development</option>
+                    <option>General enquiry</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="message">How can we help?</label>
+                  <textarea id="message" name="message" rows="6" placeholder="Tell us a little about the conversation you would like to start."></textarea>
+                </div>
+                <div class="form-actions">
+                  <button class="button button-primary" type="button">Submit via Microsoft Forms</button>
+                </div>
+              </form>
+
+              <p class="form-note" id="form-note">
+                Mock embed only. In production, this panel can be swapped for a real Microsoft Forms iframe or linked form experience.
+              </p>
             </div>
-            <div class="form-row">
-              <label for="organisation">Organisation</label>
-              <input id="organisation" name="organisation" type="text" autocomplete="organization">
-            </div>
-            <div class="form-row">
-              <label for="interest">Area of interest</label>
-              <select id="interest" name="interest" required>
-                <option value="">Select one</option>
-                <option>Research and innovation collaboration</option>
-                <option>Commercial partnership</option>
-                <option>Public partnership</option>
-                <option>Training and workforce development</option>
-                <option>General enquiry</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="message">How can we help?</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-            </div>
-            <div class="form-row form-check">
-              <input id="consent" name="consent" type="checkbox" required>
-              <label for="consent">
-                I understand this form is for an initial enquiry and that a member of the KHP team
-                will review the information provided.
-              </label>
-            </div>
-            <div class="form-actions">
-              <button class="button button-primary" type="submit">Send enquiry</button>
-              <p class="form-note" id="form-note">This prototype uses front-end validation only and does not send data to a live service yet.</p>
-            </div>
-            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-          </form>
+          </section>
         </div>
       </section>
     </main>

@@ -11,8 +11,8 @@
   --accent-soft: #dbece7;
   --focus: #d97706;
   --shadow: 0 18px 45px rgba(18, 51, 43, 0.08);
-  --radius: 0.9rem;
-  --radius-sm: 0.65rem;
+  --radius: 0.25rem;
+  --radius-sm: 0.25rem;
   --container: 76rem;
   --header-height: 5.25rem;
   --transition: 180ms ease;
@@ -520,11 +520,11 @@ p {
   content: "";
   position: absolute;
   top: 0;
-  left: 1.5rem;
-  right: 1.5rem;
+  left: 0;
+  right: 0;
   height: 0.2rem;
   background: linear-gradient(90deg, var(--accent), rgba(0, 107, 93, 0.15));
-  border-radius: 999px;
+  border-radius: 0;
 }
 
 .impact-number {
@@ -592,14 +592,106 @@ p {
 }
 
 .logo-card {
+  position: relative;
   display: grid;
-  place-items: center;
+  align-content: space-between;
   min-height: 9rem;
   padding: 1rem;
-  text-align: center;
-  color: var(--text-muted);
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.94)),
+    radial-gradient(circle at top right, rgba(0, 107, 93, 0.08), transparent 40%),
+    linear-gradient(135deg, #eef1ec, #f8f7f3);
+  overflow: hidden;
+}
+
+.logo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, transparent 0 58%, rgba(0, 107, 93, 0.05) 58% 63%, transparent 63% 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.logo-chip,
+.logo-wordmark,
+.logo-mark {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-chip {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(26, 46, 41, 0.1);
   background: rgba(255, 255, 255, 0.72);
-  border-style: dashed;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.logo-mark {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem auto 0.85rem;
+  border: 1px solid rgba(26, 46, 41, 0.12);
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.75), transparent 26%),
+    linear-gradient(135deg, rgba(0, 107, 93, 0.9), rgba(13, 77, 67, 0.6));
+}
+
+.logo-wordmark {
+  display: block;
+  text-align: center;
+  font-family: Aptos, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.logo-card-health {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.95)),
+    radial-gradient(circle at top right, rgba(0, 107, 93, 0.11), transparent 38%),
+    linear-gradient(135deg, #edf4f2, #faf8f4);
+}
+
+.logo-card-academic {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.95)),
+    radial-gradient(circle at top right, rgba(30, 74, 139, 0.1), transparent 38%),
+    linear-gradient(135deg, #eef2f7, #faf8f4);
+}
+
+.logo-card-community {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.95)),
+    radial-gradient(circle at top right, rgba(172, 93, 35, 0.12), transparent 38%),
+    linear-gradient(135deg, #f6efe7, #faf8f4);
+}
+
+.logo-card-business {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.95)),
+    radial-gradient(circle at top right, rgba(55, 79, 75, 0.12), transparent 38%),
+    linear-gradient(135deg, #edf0ef, #faf8f4);
+}
+
+.logo-card-regional {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.95)),
+    radial-gradient(circle at top right, rgba(54, 120, 104, 0.11), transparent 38%),
+    linear-gradient(135deg, #edf6f2, #faf8f4);
+}
+
+.logo-card-innovation {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.95)),
+    radial-gradient(circle at top right, rgba(86, 61, 124, 0.12), transparent 38%),
+    linear-gradient(135deg, #f0eef7, #faf8f4);
 }
 
 .news-grid {
@@ -634,6 +726,64 @@ p {
 
 .contact-form {
   padding: 1.5rem;
+}
+
+.contact-card {
+  padding: 1.5rem;
+}
+
+.ms-form-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(199, 211, 203, 0.9);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow);
+}
+
+.ms-form-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(180deg, #f3f3f1, #e8ebe7);
+  border-bottom: 1px solid rgba(199, 211, 203, 0.9);
+}
+
+.ms-form-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #c2c9c3;
+}
+
+.ms-form-app {
+  margin-left: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.ms-form-frame {
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(243, 245, 242, 0.94));
+}
+
+.ms-form-header {
+  padding: 1.2rem 1.2rem 0.6rem;
+}
+
+.ms-form-kicker {
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-form-mock {
+  background: #fff;
+  border: 1px solid rgba(202, 210, 203, 0.85);
+  box-shadow: none;
 }
 
 .form-row {
